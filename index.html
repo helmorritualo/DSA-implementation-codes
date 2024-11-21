@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Data Structure and Algorithms Implementation</title>
+     <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-material-dark.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+     <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+</head>
+
+<body>
+     <nav>
+          <div class="nav-left">
+               <button id="sidebarToggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+               </button>
+               <h1><i class="fas fa-code"></i> DSA Implementation</h1>
+          </div>
+          <div class="nav-buttons">
+               <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+               </button>
+          </div>
+     </nav>
+
+     <div class="container">
+          <div class="sidebar">
+               <ul>
+                    <li data-category="array"> <i class="fas fa-layer-group"></i> Arrays</li>
+                    <li data-category="Pseudocode" class="has-submenu">
+                         <span class="dropdown-toggle"> <i class="fa-solid fa-pen-to-square"></i> Pseudocode <i
+                                   class="fas fa-chevron-down"></i></span>
+                         <ul class="submenu">
+                              <li data-category="bubblepseudocode">Bubble Sort Pseudocode</li>
+                              <li data-category="selectionpseudocode">Selection Sort Pseudocode</li>
+                              <li data-category="insertionpseudocode">Insertion Sort Pseudocode</li>
+                              <li data-category="mergepseudocode">Merge Sort Pseudocode</li>
+                              <li data-category="quickpseudocode">Quick Sort Pseudocode</li>
+                         </ul>
+                    </li>
+                    <li data-category="sorting" class="has-submenu">
+                         <span class="dropdown-toggle"> <i class="fas fa-sort"></i> Sorting Algorithms <i
+                                   class="fas fa-chevron-down"></i></span>
+                         <ul class="submenu">
+                              <li data-category="bubble">Bubble Sort</li>
+                              <li data-category="selection">Selection Sort</li>
+                              <li data-category="insertion">Insertion Sort</li>
+                              <li data-category="merge">Merge Sort</li>
+                              <li data-category="quick">Quick Sort</li>
+                         </ul>
+                    </li>
+                    <li data-category="linkedlist" class="has-submenu">
+                         <span class="dropdown-toggle"><i class="fa-solid fa-list"></i> Linked Lists <i
+                                   class="fas fa-chevron-down"></i></span>
+                         <ul class="submenu">
+                              <li data-category="singly">Singly Linked List</li>
+                              <li data-category="doubly">Doubly Linked List</li>
+                              <li data-category="circular">Circular Linked List</li>
+                         </ul>
+                    </li>
+                    <li data-category="stack" class="has-submenu">
+                         <span class="dropdown-toggle"><i class="fa-solid fa-layer-group"></i> Stacks <i
+                                   class="fas fa-chevron-down"></i></span>
+                         <ul class="submenu">
+                              <li data-category="infix">Infix</li>
+                              <li data-category="prefix">Prefix</li>
+                              <li data-category="postfix">Postfix</li>
+                         </ul>
+                    </li>
+                    <li data-category="queue"><i class="fa-solid fa-bars-progress"></i> Queues</li>
+                    <li data-category="tree" class="has-submenu">
+                         <span class="dropdown-toggle"><i class="fa-solid fa-sitemap"></i> Trees <i
+                                   class="fas fa-chevron-down"></i></span>
+                         <ul class="submenu">
+                              <li data-category="inorder">Inorder</li>
+                              <li data-category="preorder">Preorder</li>
+                              <li data-category="postorder">Postorder</li>
+                         </ul>
+                    </li>
+               </ul>
+          </div>
+
+          <div class="content">
+               <div class="buttons">
+                    <div class="language-selector">
+                         <button class="lang-btn active" data-lang="python"><i class="fab fa-python"></i>
+                              Python</button>
+                         <button class="lang-btn" data-lang="cpp"><i class="fas fa-code"></i> C++</button>
+                    </div>
+                    <button id="playButton">▶ Run</button>
+               </div>
+               <pre><code id="codeDisplay" class="language-python"></code></pre>
+               <div class="results-container">
+                    <h3><i class="fas fa-terminal"></i> Terminal </h3>
+                    <pre id="outputDisplay"></pre>
+               </div>
+          </div>
+     </div>
+     <script type="module" src="main.js"></script>
+</body>
+
+</html>
