@@ -34,18 +34,16 @@
      <div class="container">
           <div class="sidebar">
                <ul>
-                    <li data-category="array"> <i class="fas fa-layer-group"></i> Arrays</li>
-                    <li data-category="Pseudocode" class="has-submenu">
-                         <span class="dropdown-toggle"> <i class="fa-solid fa-pen-to-square"></i> Pseudocode <i
+                    <li data-category="use-example" class="has-submenu">
+                         <span class="dropdown-toggle"> <i class="fas fa-code-branch"></i> Algorithm Sample <i
                                    class="fas fa-chevron-down"></i></span>
                          <ul class="submenu">
-                              <li data-category="bubblepseudocode">Bubble Sort Pseudocode</li>
-                              <li data-category="selectionpseudocode">Selection Sort Pseudocode</li>
-                              <li data-category="insertionpseudocode">Insertion Sort Pseudocode</li>
-                              <li data-category="mergepseudocode">Merge Sort Pseudocode</li>
-                              <li data-category="quickpseudocode">Quick Sort Pseudocode</li>
+                              <li data-category="linear">Linear Search</li>
+                              <li data-category="binary">Binary Search</li>
+                              <li data-category="bubbleSample">Bubble Sort</li>
                          </ul>
                     </li>
+                    <li data-category="array"> <i class="fas fa-grip"></i> Arrays</li>
                     <li data-category="sorting" class="has-submenu">
                          <span class="dropdown-toggle"> <i class="fas fa-sort"></i> Sorting Algorithms <i
                                    class="fas fa-chevron-down"></i></span>
@@ -58,7 +56,7 @@
                          </ul>
                     </li>
                     <li data-category="linkedlist" class="has-submenu">
-                         <span class="dropdown-toggle"><i class="fa-solid fa-list"></i> Linked Lists <i
+                         <span class="dropdown-toggle"><i class="fa-solid fa-link"></i></i> Linked Lists <i
                                    class="fas fa-chevron-down"></i></span>
                          <ul class="submenu">
                               <li data-category="singly">Singly Linked List</li>
@@ -94,10 +92,32 @@
                          <button class="lang-btn active" data-lang="python"><i class="fab fa-python"></i>
                               Python</button>
                          <button class="lang-btn" data-lang="cpp"><i class="fas fa-code"></i> C++</button>
+                         <button class="lang-btn" data-lang="pseudocode"><i class="fas fa-file-alt"></i> Pseudocode</button>
                     </div>
                     <button id="playButton">▶ Run</button>
                </div>
-               <pre><code id="codeDisplay" class="language-python"></code></pre>
+               <div class="algorithm-header">
+                    <h3 id="algorithmTitle"></h3>
+                    <p id="algorithmDescription"></p>
+                </div>
+               <div class="code-container">
+                    <button class="copy-btn" title="Copy to clipboard">
+                         <i class="fas fa-copy"></i>
+                    </button>
+                    <pre><code id="codeDisplay" class="language-python"></code></pre>
+               </div>
+
+               <div class="complexity-info">
+                    <div class="time-complexity">
+                         <h4><i class="fas fa-clock"></i> Time Complexity</h4>
+                         <p id="timeComplexity">-</p>
+                    </div>
+                    <div class="space-complexity">
+                         <h4><i class="fas fa-memory"></i> Space Complexity</h4>
+                         <p id="spaceComplexity">-</p>
+                    </div>
+               </div>
+
                <div class="results-container">
                     <h3><i class="fas fa-terminal"></i> Terminal </h3>
                     <pre id="outputDisplay"></pre>
