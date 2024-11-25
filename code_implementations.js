@@ -1,5 +1,6 @@
 export const algorithmComplexities = {
-  linear: {
+  // sample implementation
+    linear: {
     time: "O(n*logn)",
     space: "O(1)"
   },
@@ -32,12 +33,6 @@ export const algorithmComplexities = {
   quick: {
     time: "O(n log n)",
     space: "O(log n)",
-  },
-  
-  // Array operations
-  array: {
-    time: "O(n)", // For traversal
-    space: "O(n)",
   },
   
   // Linked Lists
@@ -400,7 +395,97 @@ Main program:
     }
   },
 
-  array: {
+  traversalArray: {
+    python: {
+        code: `arr = [7, 12, 9, 4, 11]
+
+# Traversing over arr
+for i in range(len(arr)):
+    print(arr[i], end=" ")`,
+    output: `7 12 9 4 11`,
+    },
+    cpp: {
+        code: `#include <iostream>
+using namespace std;
+int main() {
+    int arr[] = { 7, 12, 9, 4, 11 };
+    int len = sizeof(arr) / sizeof(arr[0]);
+    // Traversing over arr[]
+    for (int i = 0; i < len; i++) {
+        cout << arr[i] << " ";
+    }
+}`,
+       output: `7 12 9 4 11`
+    },
+    pseudocode: {
+        code: `Array = [7, 12, 9, 4, 11]
+Loop through Array:
+    Print current element`
+    }
+  },
+
+  insertionArray: {
+    python: {
+        code: `arr = [7, 12, 9, 4, 11]
+x = 10  # Element to be inserted
+pos = 2  # Position to insert the element
+
+arr.insert(pos, x)
+
+# Print the updated list
+print("Updated List:", arr)`,
+      output: `Updated List: 7, 12, 10, 9, 4, 11`,
+    },
+    cpp: {
+        code: `#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Initialize a vector
+    vector<int> arr = { 7, 12, 9, 4, 11 };
+
+    // Element to be inserted
+    int x = 10;
+
+    // Position to insert the element
+    int pos = 2;
+
+    // Insert the element at the specified position
+    if (pos >= 0 && pos <= arr.size()) {
+        arr.insert(arr.begin() + pos, x);
+    } else {
+        cout << "Invalid position!" << endl;
+    }
+
+    // Print the updated vector
+    cout << "Updated List: ";
+    for (int val : arr) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    return 0;
+}`, 
+      output: `Updated List: 7 12 10 9 4 11`
+    },
+    pseudocode: {
+        code: `Start with array [1, 2, 3, 4, 5]
+Decide the number to insert (10) and the position to insert it (2)
+
+Check if the position is valid:
+    If position is between 0 and the size of the array:
+        Move all numbers from the position to the end one step to the right
+        Place the number (10) in the position
+    Otherwise:
+        Show a message: "Invalid position!"
+
+Show the updated array
+`
+    }
+  },
+
+  searchingArray: {
     python: {
       code: `my_array = [7, 12, 9, 4, 11]
 minVal = my_array[0]   
@@ -441,6 +526,77 @@ For each element in the array:
         Update minVal to the current element
 
 Show "Lowest value: ", minVal
+`
+    }
+  },
+
+  deletingArray: {
+    python: {
+        code: `# Initialize a list
+arr = [7, 12, 9, 4, 11]
+
+# Value to delete
+key = 12
+
+# Remove the element with the specified value
+# if present in the list
+if key in arr:
+   arr.remove(key)
+else:
+   print("Element Not Found")
+
+# Output the modified list
+print("Modified array: arr")`,
+      output: `Modified array: 7, 9, 4, 11`,
+    },
+    cpp: {
+        code: `#include <iostream>
+#include <vector>
+#include <algorithm> // For std::find
+using namespace std;
+
+int main() {
+    // Initialize a vector
+    vector<int> arr = {7, 12, 9, 4, 11 };
+
+    // Value to delete
+    int key = 12;
+
+    // Search for the element in the vector
+    auto it = find(arr.begin(), arr.end(), key);
+
+    // Check if the element exists
+    if (it != arr.end()) {
+        // Remove the element
+        arr.erase(it);
+    } else {
+        cout << "Element Not Found" << endl;
+    }
+
+    // Output the modified vector
+    cout << "Modified array: ";
+    for (int val : arr) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    return 0;
+}`, 
+      output: `Modified array: 7 9 4 11`
+    },
+    pseudocode: {
+        code: `Start with array [7, 12, 9, 4, 11]
+Set key to 12
+
+For each position in the array:
+    If current element is equal to key:
+        Remove this element from the array
+        Break the loop
+
+If key was not found:
+    Show message "Element Not Found"
+
+Show the final array
 `
     }
   },

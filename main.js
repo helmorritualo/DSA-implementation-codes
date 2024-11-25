@@ -214,11 +214,28 @@ const updateCodeDisplay = () => {
       "- This program sorts a list of grades in descending order using the Bubble Sort algorithm, where the highest grade is ranked 1, the second-highest ranked 2, and so on. It first prints the original list of grades and then displays the sorted grades along with their corresponding ranks. The sorting process ensures that the grades are arranged from the highest to the lowest, making it suitable for ranking purposes.",
       "fa-sort",
     ],
-    array: [
-      "Arrays",
-      "- An array is a data structure used to store multiple elements.",
+    traversalArray: [
+      "Array Traversal",
+      "- Array traversal involves visiting all the elements of the array once.",
       "fa-grip",
     ],
+    insertionArray: [
+      "Insertion in Array",
+      "- We can insert one or multiple elements at any position in the array.",
+      "fa-grip",
+    ],
+    searchingArray: [
+      "Searching in Array",
+      "- We can traverse over an array and search for an element.",
+      "fa-grip",
+    ],
+
+    deletingArray: [
+      "Deletion in Array",
+      "- We can delete an element at any index in an array.",
+      "fa-grip",
+    ],
+
     bubble: [
       "Bubble Sort",
       "- Bubble Sort is an algorithm that sorts an array from the lowest value to the highest value.",
@@ -286,6 +303,7 @@ const updateCodeDisplay = () => {
 
   const [title, decription, icon] = titleMap[currentCategory] || [
     "DSA Implementation",
+    "- This is a general implementation of a data structure.",
     "fa-code",
   ];
   algorithmTitle.innerHTML = `<i class="fas ${icon}"></i> ${title}`;
