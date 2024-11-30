@@ -208,18 +208,38 @@ body {
   display: none;
 }
 
-.stack-container,
 .queue-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 2px;
+  min-height: 300px;
 }
 
-.stack-element,
-.queue-element {
+.stack-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2px;
+  min-height: 300px;
+}
+
+.stack-element{
   width: 200px;
   height: 40px;
+  background: #1a73e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.queue-element {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
   background: #1a73e8;
   color: white;
   display: flex;
