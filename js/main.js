@@ -35,6 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarToggle = document.getElementById("sidebarToggle");
   const sidebar = document.querySelector(".sidebar");
 
+  const visualizerButton = document.getElementById("visualizerButton");
+  const contentArea = document.querySelector(".content");
+  const visualizationContainer = document.querySelector(
+    ".visualization-container"
+  );
+
   // Create overlay element
   const overlay = document.createElement("div");
   overlay.className = "sidebar-overlay";
@@ -104,6 +110,14 @@ document.addEventListener("DOMContentLoaded", () => {
         closeAllDropdowns();
         updateCodeDisplay();
       }
+
+      if (item.id !== "visualizerButton") {
+        item.addEventListener("click", () => {
+          contentArea.style.display = "block";
+          visualizationContainer.style.display = "none";
+          visualizerButton.classList.remove("active");
+        });
+      }
     });
   });
 
@@ -155,6 +169,24 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       console.error("Error displaying output:", error);
       outputDisplay.textContent = `Error: ${error.message}`;
+    }
+  });
+
+  visualizerButton.addEventListener("click", () => {
+    // Hide content area
+    contentArea.style.display = "none";
+
+    // Show visualization container
+    visualizationContainer.style.display = "block";
+
+    // Update active state in sidebar
+    sidebarItems.forEach((item) => item.classList.remove("active"));
+    visualizerButton.classList.add("active");
+
+    // Close sidebar on mobile after clicking
+    if (window.innerWidth <= 768) {
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
     }
   });
 });
@@ -214,6 +246,19 @@ const updateCodeDisplay = () => {
       "- This program sorts a list of grades in descending order using the Bubble Sort algorithm, where the highest grade is ranked 1, the second-highest ranked 2, and so on. It first prints the original list of grades and then displays the sorted grades along with their corresponding ranks. The sorting process ensures that the grades are arranged from the highest to the lowest, making it suitable for ranking purposes.",
       "fa-sort",
     ],
+
+    binaryTwo: [
+      "Binary Search: Find Minimun",
+      "- This program finds the minimum value in an array using the Binary Search algorithm. It repeatedly divides the array in half and compares the middle element with the target value. If the target value is found, it returns the index of the target value. If the target value is not found, it returns the index of the element that is greater than the target value. The algorithm continues to divide the array in half until the target value is found or the array is empty.",
+      "fa-sort",
+    ],
+
+    twoSum: [
+      "Two Sum: Finding Two Numbers that Add Up to a Target",
+      "- The Two Sum II problem involves finding two numbers in a sorted array that add up to a given target value. The goal is to return the 1-indexed positions of the two numbers whose sum equals the target. Since the array is sorted in ascending order, the problem can be efficiently solved using the two-pointer technique. One pointer starts at the beginning of the array, and the other starts at the end.",
+      "fa-code",
+    ],
+
     traversalArray: [
       "Array Traversal",
       "- Array traversal involves visiting all the elements of the array once.",

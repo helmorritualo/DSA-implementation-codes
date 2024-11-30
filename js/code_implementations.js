@@ -1,19 +1,27 @@
 export const algorithmComplexities = {
   // sample implementation
-    linear: {
+  linear: {
     time: "O(n*logn)",
-    space: "O(1)"
+    space: "O(1)",
   },
   binary: {
     time: "O(n)",
-    space: "O(1)"
+    space: "O(1)",
   },
   bubbleSample: {
     time: "O(n²)",
-    space: "O(1)"
+    space: "O(1)",
+  },
+  binaryTwo: {
+    time: "O(n)",
+    space: "O(1)",
+  },
+  twoSum: {
+    time: "O(n)",
+    space: "O(1)",
   },
 
- // Algorithms Implementation
+  // Algorithms Implementation
   bubble: {
     time: "O(n²)",
     space: "O(1)",
@@ -34,7 +42,27 @@ export const algorithmComplexities = {
     time: "O(n log n)",
     space: "O(log n)",
   },
-  
+
+  // Array Implementation
+  traversalArray: {
+    time: "O(n)",
+    space: "O(1)",
+  },
+  insertionArray: {
+    time: "O(n)",
+    space: "O(1)",
+  },
+
+  searchingArray: {
+    time: "O(n)",
+    space: "O(1)",
+  },
+
+  deletingArray: {
+    time: "O(n)",
+    space: "O(1)",
+  },
+
   // Linked Lists
   singly: {
     time: "O(n)", // For traversal
@@ -48,7 +76,7 @@ export const algorithmComplexities = {
     time: "O(n)", // For traversal
     space: "O(n)",
   },
-  
+
   // Stack operations
   infix: {
     time: "O(n)",
@@ -62,13 +90,13 @@ export const algorithmComplexities = {
     time: "O(n)",
     space: "O(n)",
   },
-  
+
   // Queue operations
   queue: {
     time: "O(1)", // For enqueue/dequeue
     space: "O(n)",
   },
-  
+
   // Tree Traversals
   inorder: {
     time: "O(n)",
@@ -81,7 +109,7 @@ export const algorithmComplexities = {
   postorder: {
     time: "O(n)",
     space: "O(h)", // h is height of tree
-  }
+  },
 };
 
 export const codeImplementations = {
@@ -197,7 +225,6 @@ def countOnes(arr, low, high):
     return 0
 
 
-# Driver Code
 arr = [1, 1, 1, 1, 0, 0, 0]
 print("Count of 1's in given array is", countOnes(arr, 0, len(arr)-1))
 `, 
@@ -230,7 +257,6 @@ int countOnes(bool arr[], int low, int high)
     return 0;
 }
 
-/* Driver Code */
 int main()
 {
     bool arr[] = { 1, 1, 1, 1, 0, 0, 0 };
@@ -391,6 +417,170 @@ Main program:
     Display the original unsorted grades
     
     Display the sorted grades with their respective ranks (rank is the index + 1)
+`
+    }
+  },
+
+  binaryTwo: {
+    python: {
+        code: `def findMin(array):
+
+    L = 0
+    R = len(array) - 1
+
+    while L < R:
+        M = (L + R) // 2
+
+        if array[M] > array[R]:
+            L = M + 1
+        else:
+            R = M
+
+    return array[L]
+
+array = [4, 5, 6, 1, 2, 3]
+
+result = findMin(array)
+
+print(result)`,
+       output: `1`
+    },
+    cpp: {
+        code: `#include <iostream>
+#include <vector>
+using namespace std;
+
+int findMin(const vector<int>& array) {
+    int L = 0;
+    int R = array.size() - 1;
+
+    while (L < R) {
+        int M = (L + R) / 2;
+
+        if (array[M] > array[R]) {
+            L = M + 1;
+        } else {
+            R = M;
+        }
+    }
+
+    return array[L];
+}
+
+int main() {
+    vector<int> array = {4, 5, 6, 1, 2, 3};
+
+    int result = findMin(array);
+
+    cout << result << endl;
+
+    return 0;
+}
+`, 
+      output: `1`
+    },
+    pseudocode: {
+        code: `Set initial array to [4, 5, 6, 1, 2, 3]
+Get the length of the array
+
+Set L to 0 (start of the array)
+Set R to length of array - 1 (end of the array)
+
+Repeat until L equals R:
+
+    Find the middle position M as (L + R) // 2
+
+    If the value at position M is greater than the value at position R:
+        Move L to position M + 1
+    Otherwise:
+        Move R to position M
+    Return the value at position L as the minimum value`
+    }
+  },
+
+  twoSum: {
+    python: {
+        code: `def twoSum(nums, target):
+    left, right = 0, len(nums) - 1  # Initialize two pointers
+    
+    while left < right:
+        current_sum = nums[left] + nums[right]
+        
+        if current_sum == target:
+            return [left + 1, right + 1]  # Return 1-indexed positions
+        elif current_sum < target:
+            left += 1  # Move the left pointer to the right to increase the sum
+        else:
+            right -= 1  # Move the right pointer to the left to decrease the sum
+    
+    return []  # In case no solution is found (though the problem guarantees one)
+
+nums = [2, 7, 11, 15]
+target = 9
+print(twoSum(nums, target))
+`, output: `[1, 2]`
+    },
+
+    cpp: {
+        code: `#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> twoSum(vector<int>& nums, int target) {
+    int left = 0, right = nums.size() - 1;  // Initialize two pointers
+    
+    while (left < right) {
+        int current_sum = nums[left] + nums[right];
+        
+        if (current_sum == target) {
+            return {left + 1, right + 1};  // Return 1-indexed positions
+        } else if (current_sum < target) {
+            left += 1;  // Move the left pointer to the right to increase the sum
+        } else {
+            right -= 1;  // Move the right pointer to the left to decrease the sum
+        }
+    }
+    
+    return {};  // In case no solution is found (though the problem guarantees one)
+}
+
+int main() {
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
+    
+    vector<int> result = twoSum(nums, target);
+    cout << "[" << result[0] << ", " << result[1] << "]" << endl;
+    return 0;
+}
+`,  output: `[1, 2]`
+    },
+    pseudocode: {
+        code: `Start with sorted array nums = [2, 7, 11, 15]
+Set target value as target
+
+Get total count of numbers in nums
+
+Initialize two pointers:
+    left pointer at the start of the array (left = 0)
+    right pointer at the end of the array (right = length of nums - 1)
+
+While left pointer is less than right pointer:
+    Calculate current_sum = nums[left] + nums[right]
+    
+    If current_sum is equal to target:
+        Output the positions of the left and right pointers (left + 1, right + 1)
+        End the process
+    
+    Else if current_sum is less than target:
+        Move the left pointer to the right (left = left + 1)
+    
+    Else:
+        Move the right pointer to the left (right = right - 1)
+
+If no solution is found:
+    Output [-1, -1]
+
+End
 `
     }
   },

@@ -79,7 +79,7 @@ nav h1 {
 }
 
 .sidebar {
-  width: 280px;
+  width: 300px;
   background-color: var(--white);
   border-right: 1px solid #e2e8f0;
   padding: 1.5rem;
@@ -94,17 +94,28 @@ nav h1 {
   color: var(--text-color);
 }
 
+.data-text {
+  margin: 1rem;
+  font-size: 1.35rem;
+}
+
 .sidebar ul {
   list-style: none;
 }
 
 .sidebar li {
   padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   cursor: pointer;
   border-radius: 0.5rem;
   transition: all 0.2s;
   font-weight: 500;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebar li:focus {
+  outline: none;
 }
 
 .sidebar li:hover {
@@ -290,7 +301,7 @@ i {
 
 /* style for pseudocodes */
 .language-pseudocode {
-  color: #d4d4d4 !important; 
+  color: #d4d4d4 !important;
   background: none !important;
 }
 
@@ -364,7 +375,7 @@ pre[class*="language-pseudocode"] {
   }
 
   nav h1 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .sidebar {
@@ -440,13 +451,15 @@ pre[class*="language-pseudocode"] {
   }
 
   #playButton {
-    width: 100%;
+    width: 30%;
     margin-right: 0;
+    margin-bottom: 0.7rem;
+    font-size: 0.9rem;
   }
 
   pre {
     padding: 1rem;
-    font-size: 0.875rem;
+    font-size: 0.5rem;
   }
 
   #outputDisplay {
@@ -459,12 +472,20 @@ pre[class*="language-pseudocode"] {
     margin-top: 1.5rem;
     padding: 1rem;
   }
+
+  #algorithmTitle {
+    font-size: 20px;
+  }
+
+  #algorithmDescription {
+    font-size: 18px;
+  }
 }
 
 /* For very small mobile devices */
 @media screen and (max-width: 480px) {
   nav h1 {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   .sidebar li {
@@ -478,7 +499,7 @@ pre[class*="language-pseudocode"] {
   }
 
   pre {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
 
   .results-container h3 {
@@ -488,14 +509,13 @@ pre[class*="language-pseudocode"] {
   #outputDisplay {
     font-size: 0.9rem;
   }
-}
 
-/* Improve touch targets on mobile */
-@media (hover: none) {
-  .sidebar li,
-  .lang-btn,
-  #playButton {
-    min-height: 44px;
+  #algorithmTitle {
+    font-size: 18px;
+  }
+
+  #algorithmDescription {
+    font-size: 16px;
   }
 }
 
@@ -503,5 +523,17 @@ pre[class*="language-pseudocode"] {
 @media screen and (max-width: 768px) {
   [data-theme="dark"] .sidebar {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .sidebar li:active {
+    color: var(--primary-color);
+  }
+
+  .sidebar li,
+  .lang-btn,
+  #playButton {
+    min-height: 44px;
   }
 }

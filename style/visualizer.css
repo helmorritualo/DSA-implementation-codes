@@ -1,0 +1,412 @@
+[data-theme="dark"] .visualization-container {
+  background-color: #222221;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .header h1 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .tab {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .tab.active {
+  background: #45a049;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .visualization-area {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .control-btn {
+  background: #45a049;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .array-bar {
+  background: #1a73e8;
+}
+
+[data-theme="dark"] .array-bar.comparing {
+  background: #ffd700;
+}
+
+[data-theme="dark"] .array-bar.sorted {
+  background: #4caf50;
+}
+
+[data-theme="dark"] .node {
+  background: #1a73e8;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .node::after {
+  background: #1a73e8;
+}
+
+[data-theme="dark"] .stack-element,
+[data-theme="dark"] .queue-element {
+  background: #1a73e8;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .tree-node {
+  background: #1a73e8;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .tree-node::before,
+[data-theme="dark"] .tree-node::after {
+  background: #1a73e8;
+}
+
+[data-theme="dark"] .input-control {
+  background: #2d2d2d;
+  border-color: #1a73e8;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .speed-control label {
+  color: #ffffff;
+}
+
+[data-theme="dark"] #speedRange {
+  background: #2d2d2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+/* Dark theme */
+[data-theme="dark"] body {
+  background-color: #222221;
+}
+
+.visualization-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 15px 20px;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab.active {
+  background: #1a73e8;
+  color: white;
+}
+
+.visualization-area {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 400px;
+  position: relative;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.control-btn {
+  padding: 8px 16px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Visualization Styles */
+.array-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 300px;
+  gap: 2px;
+}
+
+.array-bar {
+  width: 30px;
+  background: #1a73e8;
+  transition: height 0.3s ease;
+}
+
+.array-bar.comparing {
+  background: #ffd700;
+}
+
+.array-bar.sorted {
+  background: #4caf50;
+}
+
+.linked-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1a73e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  position: relative;
+}
+
+.node::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  width: 20px;
+  height: 2px;
+  background: #1a73e8;
+}
+
+.node:last-child::after {
+  display: none;
+}
+
+.stack-container,
+.queue-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stack-element,
+.queue-element {
+  width: 200px;
+  height: 40px;
+  background: #1a73e8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.data-structure-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-control {
+  padding: 8px;
+  border: 1px solid #1a73e8;
+  border-radius: 5px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .visualization-container {
+    padding: 80px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .visualization-area {
+    min-height: 300px;
+    padding: 10px;
+  }
+
+  .array-container {
+    height: 250px;
+  }
+
+  .array-bar {
+    width: 20px;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .control-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .stack-element,
+  .queue-element {
+    width: 150px;
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+  .visualization-container {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .tab {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .visualization-area {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .array-container {
+    height: 200px;
+  }
+
+  .array-bar {
+    width: 15px;
+  }
+
+  .node {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    font-size: 12px;
+  }
+
+  .stack-element,
+  .queue-element {
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .input-control {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .data-structure-controls {
+    flex-direction: column;
+  }
+
+  .data-structure-controls button {
+    width: 100%;
+  }
+
+  .speed-control {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* For very small devices */
+@media screen and (max-width: 320px) {
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .array-bar {
+    width: 10px;
+  }
+
+  .tab {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .control-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .array-container {
+    gap: 1px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tree-node {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  .tree-node::before,
+  .tree-node::after {
+    height: 15px;
+    top: -15px;
+  }
+}
