@@ -497,6 +497,10 @@ pre[class*="language-pseudocode"] {
     font-size: 0.6rem;
   }
 
+  nav h1 i {
+    font-size: 0.6rem;
+  }
+
   .sidebar li {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
