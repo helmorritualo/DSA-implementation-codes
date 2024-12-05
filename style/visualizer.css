@@ -13,7 +13,7 @@
 }
 
 [data-theme="dark"] .tab.active {
-  background: #45a049;
+  background: #f06292;
   color: #ffffff;
 }
 
@@ -23,12 +23,12 @@
 }
 
 [data-theme="dark"] .control-btn {
-  background: #45a049;
+  background: #f06292;
   color: #ffffff;
 }
 
 [data-theme="dark"] .array-bar {
-  background: #1a73e8;
+  background: #f06292;
 }
 
 [data-theme="dark"] .array-bar.comparing {
@@ -40,33 +40,23 @@
 }
 
 [data-theme="dark"] .node {
-  background: #1a73e8;
+  background: #f06292;
   color: #ffffff;
 }
 
 [data-theme="dark"] .node::after {
-  background: #1a73e8;
+  background: #f06292;
 }
 
 [data-theme="dark"] .stack-element,
 [data-theme="dark"] .queue-element {
-  background: #1a73e8;
+  background: #f06292;
   color: #ffffff;
-}
-
-[data-theme="dark"] .tree-node {
-  background: #1a73e8;
-  color: #ffffff;
-}
-
-[data-theme="dark"] .tree-node::before,
-[data-theme="dark"] .tree-node::after {
-  background: #1a73e8;
 }
 
 [data-theme="dark"] .input-control {
   background: #2d2d2d;
-  border-color: #1a73e8;
+  border-color: #f06292;
   color: #ffffff;
 }
 
@@ -125,7 +115,7 @@ body {
 }
 
 .tab.active {
-  background: #1a73e8;
+  background: #f06292;
   color: white;
 }
 
@@ -145,10 +135,15 @@ body {
 
 .control-btn {
   padding: 8px 16px;
-  background: #1a73e8;
+  background: #f06292;
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+#speedRange {
+  accent-color: #f06292;
   cursor: pointer;
 }
 
@@ -163,7 +158,7 @@ body {
 
 .array-bar {
   width: 30px;
-  background: #1a73e8;
+  background: #f06292;
   transition: height 0.3s ease;
 }
 
@@ -186,7 +181,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #1a73e8;
+  background: #f06292;
   color: white;
   display: flex;
   align-items: center;
@@ -201,7 +196,7 @@ body {
   right: -20px;
   width: 20px;
   height: 2px;
-  background: #1a73e8;
+  background: #f06292;
 }
 
 .node:last-child::after {
@@ -228,7 +223,7 @@ body {
 .stack-element{
   width: 200px;
   height: 40px;
-  background: #1a73e8;
+  background: #f06292;
   color: white;
   display: flex;
   align-items: center;
@@ -240,7 +235,7 @@ body {
   width: 100px;
   height: 40px;
   border-radius: 8px;
-  background: #1a73e8;
+  background: #f06292;
   color: white;
   display: flex;
   align-items: center;
@@ -265,7 +260,7 @@ body {
 
 .input-control {
   padding: 8px;
-  border: 1px solid #1a73e8;
+  border: 1px solid #f06292;
   border-radius: 5px;
 }
 

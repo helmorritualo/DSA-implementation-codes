@@ -10,15 +10,19 @@ let currentLanguage = "python";
 const themeToggle = document.getElementById("themeToggle");
 const html = document.documentElement;
 
+window.postMessage({ type: "theme", theme: "dark" }, "*");
+
 themeToggle.addEventListener("click", () => {
-  const currentTheme = html.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
-  html.setAttribute("data-theme", newTheme);
+  const currentTheme = html.setAttribute(
+    "data-theme",
+    html.getAttribute("data-theme") === "light" ? "dark" : "light"
+  );
+  localStorage.setItem("theme", currentTheme);
 
-  const icon = themeToggle.querySelector("i");
-  icon.className = newTheme === "light" ? "fas fa-sun" : "fas fa-moon";
+  themeToggle.querySelector("i").className =
+    html.getAttribute("data-theme") === "light" ? "fas fa-sun" : "fas fa-moon";
 
-  localStorage.setItem("theme", newTheme);
+  localStorage.setItem("themeToggled", "true");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const langButtons = document.querySelectorAll(".lang-btn");
   const playButton = document.getElementById("playButton");
 
+  // Set theme
   const savedTheme = localStorage.getItem("theme") || "light";
   html.setAttribute("data-theme", savedTheme);
   const icon = themeToggle.querySelector("i");

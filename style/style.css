@@ -1,23 +1,23 @@
 :root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --background-color: #f8fafc;
-  --sidebar-color: #1e293b;
-  --text-color: #334155;
+  --primary-color: #e91e63; 
+  --secondary-color: #ad1457; 
+  --background-color: #ffe4e1;
+  --sidebar-color: #f8bbd0;
+  --text-color: #880e4f;
   --white: #ffffff;
   --button-text: #ffffff;
-  --output: black;
-  --output-bg: #f8fafc;
+  --output: #880e4f;
+  --output-bg: #ffe4e1; 
 }
 
 [data-theme="dark"] {
-  --background-color: #222221;
-  --text-color: #f8fafc;
-  --white: #1e1e1f;
-  --primary-color: #45a049;
-  --side-bar-text: #f8fafc;
-  --output-bg: #222221;
-  --output: #ffffff;
+  --background-color: #31102b; 
+  --text-color: #fce4ec;
+  --white: #1e1e1f; 
+  --primary-color: #f06292; 
+  --side-bar-text: #ffffff;
+  --output-bg: #272626; 
+  --output: #fce4ec;
 }
 
 * {
@@ -45,10 +45,12 @@ nav {
   z-index: 100;
 }
 
-nav h1 {
+nav h1 a {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s;
 }
 
 #playButton {
@@ -120,6 +122,7 @@ nav h1 {
 
 .sidebar li:hover {
   color: var(--primary-color);
+  transform: translateX(5px);
 }
 
 .sidebar li.active {
@@ -359,8 +362,9 @@ pre[class*="language-pseudocode"] {
     width: 240px;
   }
 
-  nav h1 {
+  nav h1 a{
     font-size: 1.2rem;
+    cursor: pointer;
   }
 }
 
@@ -374,7 +378,7 @@ pre[class*="language-pseudocode"] {
     padding: 0.8rem 1rem;
   }
 
-  nav h1 {
+  nav h1 a{
     font-size: 0.9rem;
   }
 
@@ -484,7 +488,7 @@ pre[class*="language-pseudocode"] {
 
 /* For very small mobile devices */
 @media screen and (max-width: 480px) {
-  nav h1 {
+  nav h1 a{
     font-size: 0.6rem;
   }
 

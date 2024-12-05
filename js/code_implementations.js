@@ -806,7 +806,7 @@ for i in range(n-1):
         break
 
 print("Sorted array:", my_array)`,
-      output: "Sorted array: [3, 7, 9, 11, 12]",
+      output: "Sorted array: 3, 7, 9, 11, 12",
     },
     cpp: {
       code: `#include <iostream>
@@ -869,7 +869,7 @@ for i in range(n):
     my_array[i], my_array[min_index] = my_array[min_index], my_array[i]
 
 print("Sorted array:", my_array)`,
-      output: "Sorted array: [5, 11, 12, 22, 25, 34, 64, 90]",
+      output: "Sorted array: 5, 11, 12, 22, 25, 34, 64, 90",
     },
     cpp: {
       code: `#include <iostream>
@@ -936,7 +936,7 @@ for i in range(1,n):
     my_array[insert_index] = current_value
 
 print("Sorted array:", my_array)`,
-      output: "Sorted array: [5, 11, 12, 22, 25, 34, 64, 90]",
+      output: "Sorted array: 5, 11, 12, 22, 25, 34, 64, 90",
     },
     cpp: {
       code: `#include <iostream>
@@ -1024,7 +1024,7 @@ def merge(left, right):
 unsortedArr = [3, 7, 6, -10, 15, 23.5, 55, -13]
 sortedArr = mergeSort(unsortedArr)
 print("Sorted array:", sortedArr)`,
-      output: "Sorted array: [-13, -10, 3, 6, 7, 15, 23.5, 55]",
+      output: "Sorted array: -13, -10, 3, 6, 7, 15, 23.5, 55",
     },
     cpp: {
       code: `#include <iostream>
@@ -1157,7 +1157,7 @@ def quicksort(array, low=0, high=None):
 my_array = [64, 34, 25, 12, 22, 11, 90, 5]
 quicksort(my_array)
 print("Sorted array:", my_array)`,
-      output: "Sorted array: [5, 11, 12, 22, 25, 34, 64, 90]",
+      output: "Sorted array: 5, 11, 12, 22, 25, 34, 64, 90",
     },
     cpp: {
       code: `#include <iostream>
