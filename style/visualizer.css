@@ -1,3 +1,4 @@
+
 [data-theme="dark"] .visualization-container {
   background-color: #222221;
   color: #ffffff;
@@ -275,6 +276,7 @@ body {
     opacity: 1;
   }
 }
+
 
 /* For tablets and smaller screens */
 @media screen and (max-width: 768px) {

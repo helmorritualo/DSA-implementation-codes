@@ -326,9 +326,21 @@ const updateCodeDisplay = () => {
       "- A circular linked list is a special type of linked list where all the nodes are connected to form a circle. Unlike a regular linked list, which ends with a node pointing to NULL, the last node in a circular linked list points back to the first node. This means that you can keep traversing the list without ever reaching a NULL value.",
       "fa-link",
     ],
-    infix: ["Infix Expression", "", "fa-layer-group"],
-    prefix: ["Prefix Expression", "", "fa-layer-group"],
-    postfix: ["Postfix Expression", "", "fa-layer-group"],
+    infix: [
+      "Infix Expression",
+      "- Infix Expression is an expression where the operator is placed between the operands. For example, 2 + 3 is an infix expression.",
+      "fa-layer-group",
+    ],
+    prefix: [
+      "Prefix Expression",
+      "- Prefix Expression is an expression where the operator is placed before the operands. For example, + 2 3 is a prefix expression.",
+      "fa-layer-group",
+    ],
+    postfix: [
+      "Postfix Expression",
+      "- Postfix Expression is an expression where the operator is placed after the operands. For example, 2 3 + is a postfix expression.",
+      "fa-layer-group",
+    ],
     queue: [
       "Queue Implementation",
       "-  Queue is a linear data structure that follows a particular order in which the operations are performed for storing data. The order is First In First Out (FIFO).",

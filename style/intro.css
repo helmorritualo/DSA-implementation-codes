@@ -453,6 +453,11 @@ body.dark-mode .hero h1 {
 }
 
 @media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .feature-cards {
     grid-template-columns: 1fr;
     gap: 1.5rem;

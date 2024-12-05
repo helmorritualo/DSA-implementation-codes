@@ -21,7 +21,7 @@ const generateArray = () => {
   if (screenWidth <= 480) {
     arraySize = 20; // For mobile devices
   } else if (screenWidth <= 768) {
-    arraySize = 23; // For tablets
+    arraySize = 25; // For tablets
   } else {
     arraySize = 25; // For desktop
   }
