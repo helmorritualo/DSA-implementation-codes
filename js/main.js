@@ -93,8 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Handle submenu items
+  // Modify the sidebar items click handler
   sidebarItems.forEach((item) => {
     item.addEventListener("click", (e) => {
+      // Remove the nested event listener that's causing the delay
       if (item.parentElement.classList.contains("submenu")) {
         e.stopPropagation();
         sidebarItems.forEach((i) => {
@@ -106,20 +108,26 @@ document.addEventListener("DOMContentLoaded", () => {
         currentCategory = item.dataset.category;
         item.closest(".has-submenu").classList.add("active");
         updateCodeDisplay();
+
+        // Handle display toggle immediately
+        if (item.id !== "visualizerButton") {
+          contentArea.style.display = "block";
+          visualizationContainer.style.display = "none";
+          visualizerButton.classList.remove("active");
+        }
       } else if (!item.classList.contains("has-submenu")) {
         sidebarItems.forEach((i) => i.classList.remove("active"));
         item.classList.add("active");
         currentCategory = item.dataset.category;
         closeAllDropdowns();
         updateCodeDisplay();
-      }
 
-      if (item.id !== "visualizerButton") {
-        item.addEventListener("click", () => {
+        // Handle display toggle immediately
+        if (item.id !== "visualizerButton") {
           contentArea.style.display = "block";
           visualizationContainer.style.display = "none";
           visualizerButton.classList.remove("active");
-        });
+        }
       }
     });
   });
