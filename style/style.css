@@ -493,6 +493,11 @@ pre[class*="language-pseudocode"] {
 
 /* For very small mobile devices */
 @media screen and (max-width: 480px) {
+
+  .container {
+    margin-top: 5.1rem;
+  }
+
   nav h1 a{
     font-size: 0.6rem;
   }
