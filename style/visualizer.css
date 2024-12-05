@@ -37,7 +37,7 @@
 }
 
 [data-theme="dark"] .array-bar.sorted {
-  background: #4caf50;
+  background: #880e4f;
 }
 
 [data-theme="dark"] .node {
@@ -168,7 +168,7 @@ body {
 }
 
 .array-bar.sorted {
-  background: #4caf50;
+  background: #880e4f;
 }
 
 .linked-list-container {
