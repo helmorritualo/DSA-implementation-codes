@@ -3,6 +3,7 @@ const body = document.body;
 const cursorLight = document.getElementById("cursor-light");
 const header = document.getElementById("header");
 const menuToggle = document.getElementById("menuToggle");
+
 const storedTheme = localStorage.getItem("theme");
 if (storedTheme === "dark") {
   body.classList.add("dark-mode");
@@ -36,17 +37,6 @@ window.addEventListener("storage", (e) => {
     const theme = storedTheme === "dark" ? "dark" : "light";
     body.setAttribute("dark-mode", theme);
     localStorage.removeItem("themeToggled");
-  }
-});
-
-window.addEventListener("message", (event) => {
-  if (event.data.type === "theme") {
-    const theme = event.data.theme;
-    if (theme === "dark") {
-      body.classList.add("dark-mode");
-    } else {
-      body.classList.remove("dark-mode");
-    }
   }
 });
 
@@ -360,4 +350,27 @@ const addMouseInteraction = () => {
 window.addEventListener("load", () => {
   createFloatingShapes();
   addMouseInteraction();
+});
+
+// Back to Top Button functionality
+const backToTopButton = document.getElementById("backToTop");
+
+// Show/hide button based on scroll position
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 100
+  ) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});
+
+// Scroll to top when button is clicked
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });

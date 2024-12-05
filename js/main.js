@@ -10,8 +10,6 @@ let currentLanguage = "python";
 const themeToggle = document.getElementById("themeToggle");
 const html = document.documentElement;
 
-window.postMessage({ type: "theme", theme: "dark" }, "*");
-
 themeToggle.addEventListener("click", () => {
   const currentTheme = html.setAttribute(
     "data-theme",
@@ -84,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const originalIcon = copyBtn.innerHTML;
       copyBtn.innerHTML = '<i class="fas fa-check"></i>';
 
-      // Reset after 2 seconds
+      // Reset after 1 seconds
       setTimeout(() => {
         copyBtn.classList.remove("success");
         copyBtn.innerHTML = originalIcon;

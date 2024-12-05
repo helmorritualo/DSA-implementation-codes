@@ -281,7 +281,8 @@ body.dark-mode .hero h1 {
   display: inline-block;
   background-color: var(--accent-color);
   color: #ffffff;
-  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  padding: 1.4rem 2.5rem;
   text-decoration: none;
   border-radius: 50px;
   font-weight: bold;
@@ -315,7 +316,7 @@ body.dark-mode .hero h1 {
 }
 
 .about {
-  padding: 8rem 0;
+  padding: 6rem 0;
   min-height: 74vh;
   background-color: var(--secondary-color);
 }
@@ -440,6 +441,71 @@ body.dark-mode .hero h1 {
   color: var(--text-color);
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: none;
+  font-size: 30px;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  animation: blink 2s infinite;
+}
+
+/* blinking animation keyframes */
+@keyframes blink {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.back-to-top:hover {
+  opacity: 0.8;
+  animation: none;
+}
+
+body.dark-mode .feature-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--bg-color);
+}
+
+body.dark-mode .feature-card:hover {
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .feature-card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#cursor-light {
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
 @media (max-width: 1024px) {
   .feature-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -487,18 +553,36 @@ body.dark-mode .hero h1 {
   #cursor-light {
     display: none;
   }
-
 }
 
 @media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about-intro {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
   .feature-cards {
     margin-top: 1.5rem;
     padding: 1rem;
   }
 
   .feature-card {
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 16px;
+  }
+
+  .feature-card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    padding: 0.5rem;
   }
 
   .container {
@@ -513,33 +597,22 @@ body.dark-mode .hero h1 {
     display: flex;
     justify-content: space-between;
   }
-}
 
-body.dark-mode .feature-card {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: var(--bg-color);
-}
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.9rem 1.2rem;
+  }
 
-body.dark-mode .feature-card:hover {
-  border-color: var(--primary-color);
-}
+  .footer-container p {
+    font-size: 0.6rem;
+  }
 
-body.dark-mode .feature-card::before {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-#cursor-light {
-  width: 400px;
-  height: 400px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition: transform 0.1s ease;
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    font-size: 1.3rem;
+  }
 }

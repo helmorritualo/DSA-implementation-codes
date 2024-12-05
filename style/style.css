@@ -431,6 +431,11 @@ pre[class*="language-pseudocode"] {
     display: block;
   }
 
+  .sidebar li:hover {
+    color: var(--side-bar-text);
+    transform: translateX(0px);
+  }
+
   .content {
     margin-left: 0;
     padding: 1rem;
