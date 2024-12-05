@@ -103,7 +103,7 @@ window.addEventListener("load", () => {
 // Animate elements on scroll
 const animateOnScroll = () => {
   const elements = document.querySelectorAll(
-    ".hero h1, .hero p, .cta-button, .about h2, .about p"
+    ".hero h1, .hero p, .cta-button, .about h2, .about p, .feature-card .icon, .feature-card h3, .slider-section h2, .slider-section p, .slider-container"
   );
   elements.forEach((element) => {
     const elementTop = element.getBoundingClientRect().top;
@@ -373,4 +373,83 @@ backToTopButton.addEventListener("click", () => {
     top: 0,
     behavior: "smooth",
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  // Toggle menu
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
+    }
+  });
+
+  // Function to initialize a slider
+  const initializeSlider = (sliderSection) => {
+    const slider = sliderSection.querySelector(".slider");
+    const slides = sliderSection.querySelectorAll(".slide");
+    const prevBtn = sliderSection.querySelector(".prev");
+    const nextBtn = sliderSection.querySelector(".next");
+    const dotsContainer = sliderSection.querySelector(".slider-dots");
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Create dots
+    slides.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = sliderSection.querySelectorAll(".dot");
+
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      updateDots();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    prevBtn.addEventListener("click", prevSlide);
+    nextBtn.addEventListener("click", nextSlide);
+  };
+
+  // Initialize both sliders
+  const sliders = document.querySelectorAll(".slider-section");
+  sliders.forEach((slider) => initializeSlider(slider));
 });

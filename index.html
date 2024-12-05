@@ -13,10 +13,19 @@
 <body>
      <div id="cursor-light"></div>
      <header id="header">
-          <div class="nav-links">
+
+          <div class="menu-toggle" id="menuToggle">
+               <span></span>
+               <span></span>
+               <span></span>
+          </div>
+
+          <nav class="nav-links" id="navLinks">
                <a href="#home">Home</a>
                <a href="#about">About</a>
-          </div>
+               <a href="#data-structures">Data Structures</a>
+               <a href="#algorithms">Algorithms</a>
+          </nav>
 
           <button class="dark-mode-toggle" id="darkModeToggle">
                ☀️
@@ -80,6 +89,90 @@
                               </div>
                          </div>
                     </div>
+               </div>
+          </section>
+
+          <!-- Data Structures Slider -->
+          <section id="data-structures" class="slider-section ds-slider">
+               <div class="container">
+                    <h2>Explore Data Structures Concepts</h2>
+                    <div class="slider-container">
+                         <button class="slider-btn prev">❮</button>
+                         <div class="slider">
+                              <div class="slide">
+                                   <img src="images/array.png" alt="Arrays">
+                                   <div class="slide-content">
+                                        <h3>Arrays</h3>
+                                        <p>Foundation of data organization</p>
+                                   </div>
+                              </div>
+                              <div class="slide">
+                                   <img src="images/linked list.png" alt="Linked Lists">
+                                   <div class="slide-content">
+                                        <h3>Linked Lists</h3>
+                                        <p>Dynamic data structure</p>
+                                   </div>
+                              </div>
+                              <div class="slide">
+                                   <img src="images/Treedatastructure.png" alt="Trees">
+                                   <div class="slide-content">
+                                        <h3>Trees</h3>
+                                        <p>Hierarchical data organization</p>
+                                   </div>
+                              </div>
+                         </div>
+                         <button class="slider-btn next">❯</button>
+                    </div>
+                    <div class="slider-dots"></div>
+               </div>
+          </section>
+
+          <!-- Algorithms Slider -->
+          <section id="algorithms" class="slider-section algo-slider">
+               <div class="container">
+                    <h2 class="popular-algorithms">Popular Sorting Algorithms</h2>
+                    <div class="slider-container">
+                         <button class="slider-btn prev">❮</button>
+                         <div class="slider">
+                              <div class="slide">
+                                   <img src="images/bubble_sort.png" alt="Bubble Sort">">
+                                   <div class="slide-content">
+                                        <h3>Bubble Sort</h3>
+                                        <p>Simple sorting algorithm</p>
+                                   </div>
+                              </div>
+                              <div class="slide">
+                                   <img src="images/selection.png" alt="Selection Sort">
+                                   <div class="slide-content">
+                                        <h3>Selection Sort</h3>
+                                        <p>Efficient sorting algorithm</p>
+                                   </div>
+                              </div>
+                              <div class="slide">
+                                   <img src="images/insertion.png" alt="Insertion Sort">
+                                   <div class="slide-content">
+                                        <h3>Insertion Sort</h3>
+                                        <p>Efficient sorting algorithm</p>
+                                   </div>
+                              </div>
+                              <div class="slide">
+                                   <img src="/images/merge.png" alt="Merge Sort">
+                                   <div class="slide-content">
+                                        <h3>Merge Sort</h3>
+                                        <p>Divide-and-conquer sorting algorithm</p>
+                                   </div>
+                              </div>
+                              <div class="slide">
+                                   <img src="/images/quick.jpg" alt="Merge Sort">
+                                   <div class="slide-content">
+                                        <h3>Merge Sort</h3>
+                                        <p>Divide-and-conquer sorting algorithm</p>
+                                   </div>
+                              </div>
+                         </div>
+                         <button class="slider-btn next">❯</button>
+                    </div>
+                    <div class="slider-dots"></div>
                </div>
           </section>
      </main>
