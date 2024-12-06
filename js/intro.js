@@ -449,7 +449,6 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.addEventListener("click", nextSlide);
   };
 
-  // Initialize both sliders
   const sliders = document.querySelectorAll(".slider-section");
   sliders.forEach((slider) => initializeSlider(slider));
 });
