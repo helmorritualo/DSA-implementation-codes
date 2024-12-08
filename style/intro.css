@@ -87,7 +87,7 @@ body {
   color: var(--primary-color);
 }
 
-.start-learn {
+.nav-links .start-learn {
   display: none;
 }
 
@@ -715,8 +715,15 @@ body.dark-mode .feature-card::before {
     font-size: 1.2rem;
   }
 
-  .start-learn {
-    display: block;
+  .nav-links .start-learn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 25px;
+    margin: 15px 0;
+    font-weight: 500;
   }
 
   /* Hamburger menu animation */
