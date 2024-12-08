@@ -87,6 +87,10 @@ body {
   color: var(--primary-color);
 }
 
+.start-learn {
+  display: none;
+}
+
 .dark-mode-toggle {
   position: fixed;
   top: 10px;
@@ -544,7 +548,6 @@ body.dark-mode .feature-card::before {
   animation: gradient-animation 8s ease infinite;
 }
 
-/* Update these specific slider styles */
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -692,11 +695,12 @@ body.dark-mode .feature-card::before {
     position: fixed;
     top: 0;
     left: -250px;
-    width: 250px;
+    width: 220px;
     height: 100vh;
     background: var(--bg-color);
     flex-direction: column;
     align-items: center;
+    gap: 2px;
     padding-top: 60px;
     transition: 0.3s ease;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
