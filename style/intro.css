@@ -715,6 +715,10 @@ body.dark-mode .feature-card::before {
     font-size: 1.2rem;
   }
 
+  .start-learn {
+    display: block;
+  }
+
   /* Hamburger menu animation */
   .menu-toggle.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
