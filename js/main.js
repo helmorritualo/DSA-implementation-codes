@@ -3,8 +3,8 @@ import {
   algorithmComplexities,
 } from "./code_implementations.js";
 
-let currentCategory = "linear";
-let currentLanguage = "python";
+let currentCategory = "linear"; // Default category
+let currentLanguage = "python"; // Default language
 
 // Dark mode toggle
 const themeToggle = document.getElementById("themeToggle");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const langButtons = document.querySelectorAll(".lang-btn");
   const playButton = document.getElementById("playButton");
 
-  // Set theme
+  // Set theme based on local storage
   const savedTheme = localStorage.getItem("theme") || "light";
   html.setAttribute("data-theme", savedTheme);
   const icon = themeToggle.querySelector("i");
@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Handle submenu items
-  // Modify the sidebar items click handler
   sidebarItems.forEach((item) => {
     item.addEventListener("click", (e) => {
       // Remove the nested event listener that's causing the delay
@@ -104,17 +103,19 @@ document.addEventListener("DOMContentLoaded", () => {
             i.classList.remove("active");
           }
         });
+
         item.classList.add("active");
         currentCategory = item.dataset.category;
         item.closest(".has-submenu").classList.add("active");
         updateCodeDisplay();
 
-        // Handle display toggle immediately
+        // Handle display toggle for visualization area immediately
         if (item.id !== "visualizerButton") {
           contentArea.style.display = "block";
           visualizationContainer.style.display = "none";
           visualizerButton.classList.remove("active");
         }
+
       } else if (!item.classList.contains("has-submenu")) {
         sidebarItems.forEach((i) => i.classList.remove("active"));
         item.classList.add("active");
@@ -122,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         closeAllDropdowns();
         updateCodeDisplay();
 
-        // Handle display toggle immediately
+        // Handle display toggle for visualization area immediately
         if (item.id !== "visualizerButton") {
           contentArea.style.display = "block";
           visualizationContainer.style.display = "none";
@@ -156,7 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
       parent.classList.toggle("active");
     });
   });
-
+  
+  // handle the language buttons to display the corresponding code
   langButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       langButtons.forEach((b) => b.classList.remove("active"));
@@ -165,7 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
       updateCodeDisplay();
     });
   });
-
+  
+  // handle the play button to simulate executing the code
   playButton.addEventListener("click", async () => {
     const outputDisplay = document.getElementById("outputDisplay");
 
@@ -182,7 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
       outputDisplay.textContent = `Error: ${error.message}`;
     }
   });
-
+  
+  // handle the visualizer button to toggle the visualization area
   visualizerButton.addEventListener("click", () => {
     // Hide content area
     contentArea.style.display = "none";
@@ -202,11 +206,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// object to hold the sidebar menu items
 const DROPDOWN_CONFIG = {
   selector: ".has-submenu",
   activeClass: "active",
 };
 
+// function to handle sidebar menu in 768px and below
 const handleSidebarMenuClick = () => {
   const sidebar = document.querySelector(".sidebar");
   const overlay = document.querySelector(".sidebar-overlay");
@@ -222,6 +228,7 @@ const handleSidebarMenuClick = () => {
   });
 };
 
+// function to close all dropdowns
 const closeAllDropdowns = () => {
   try {
     const dropdowns = document.querySelectorAll(DROPDOWN_CONFIG.selector);
@@ -233,6 +240,8 @@ const closeAllDropdowns = () => {
   }
 };
 
+// function to display the titles, descriptions, icons, 
+// time complexity and space complexity, and the code for each category
 const updateCodeDisplay = () => {
   const codeDisplay = document.getElementById("codeDisplay");
   const outputDisplay = document.getElementById("outputDisplay");
@@ -392,6 +401,7 @@ const updateCodeDisplay = () => {
   } else {
     codeDisplay.classList.add("language-python");
   }
+
   // Update complexity information
   const complexity = algorithmComplexities[currentCategory] || {
     time: "-",
@@ -400,7 +410,8 @@ const updateCodeDisplay = () => {
   timeComplexity.textContent = complexity.time;
   spaceComplexity.textContent = complexity.space;
 
-  Prism.highlightElement(codeDisplay);
+  Prism.highlightElement(codeDisplay); // Highlight the code
+  
 
   const activeDropdowns = Array.from(
     document.querySelectorAll(".has-submenu.active")
@@ -410,14 +421,6 @@ const updateCodeDisplay = () => {
   });
 
   outputDisplay.textContent = "";
-};
-const executeCode = async (language) => {
-  try {
-    return codeImplementations[currentCategory][language].output;
-  } catch (error) {
-    console.error("Execution error:", error);
-    throw new Error(`Failed to get output: ${error.message}`);
-  }
 };
 
 updateCodeDisplay();

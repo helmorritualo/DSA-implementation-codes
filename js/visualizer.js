@@ -7,13 +7,7 @@ let animationSpeed = 100;
 let isAnimating = false;
 let currentTab = "array";
 
-const init = () => {
-  generateArray();
-  addEventListeners();
-  updateSpeedFromRange();
-};
-
-// Generate random array
+// Generate random array based on screen width
 const generateArray = () => {
   const screenWidth = window.innerWidth;
   let arraySize;
@@ -49,7 +43,7 @@ const displayArray = () => {
   });
 };
 
-// Sorting Algorithms
+// bubble sort algorithms animation 
 const bubbleSort = async () => {
   const n = array.length;
   const bars = document.getElementsByClassName("array-bar");
@@ -77,6 +71,7 @@ const bubbleSort = async () => {
   bars[0].classList.add("sorted");
 };
 
+// selection sort algorithms animation
 const selectionSort = async () => {
   const n = array.length;
   const bars = document.getElementsByClassName("array-bar");
@@ -112,6 +107,7 @@ const selectionSort = async () => {
   bars[n - 1].classList.add("sorted");
 };
 
+// insertion sort algorithms animation
 const insertionSort = async () => {
   const n = array.length;
   const bars = document.getElementsByClassName("array-bar");
@@ -143,6 +139,7 @@ const insertionSort = async () => {
   }
 };
 
+// merget sort algorithms animation
 const mergeSort = async () => {
   const bars = document.getElementsByClassName("array-bar");
 
@@ -207,7 +204,7 @@ const mergeSort = async () => {
   await mergeSortHelper(0, array.length - 1);
 };
 
-// QuickSort Implementation
+// QuickSort algorithms animation
 const quickSort = async () => {
   const bars = document.getElementsByClassName("array-bar");
 
@@ -342,7 +339,6 @@ const dequeue = () => {
   }
 };
 
-// Event Listeners
 const addEventListeners = () => {
   // Speed control
   document
@@ -396,10 +392,12 @@ const addEventListeners = () => {
   });
 };
 
+// funtion to handle the animation speed
 const updateSpeedFromRange = () => {
   animationSpeed = 210 - parseInt(document.getElementById("speedRange").value);
 };
 
+// funtion to handle the sort alogithms based on the user selected in the dropdown button
 const startVisualization = () => {
   if (isAnimating) return;
   isAnimating = true;
@@ -424,11 +422,13 @@ const startVisualization = () => {
   }
 };
 
+// function to reset the sorting animation
 const resetVisualization = () => {
   isAnimating = false;
   generateArray();
 };
 
+// function to handle the swtiching of the tab
 const switchTab = (tab) => {
   document.querySelectorAll(".tab").forEach((t) => {
     t.classList.remove("active");
@@ -448,6 +448,12 @@ const switchTab = (tab) => {
   if (selectedControls) selectedControls.style.display = "flex";
 
   currentTab = tab;
+};
+
+const init = () => {
+  generateArray();
+  addEventListeners();
+  updateSpeedFromRange();
 };
 
 init();

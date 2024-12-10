@@ -92,6 +92,7 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
+// dark cursor effect in the lightmode and darkmode
 window.addEventListener("load", () => {
   if (body.classList.contains("dark-mode")) {
     cursorLight.style.opacity = "1";
@@ -133,6 +134,8 @@ style.textContent = `
         `;
 document.head.appendChild(style);
 
+
+// function for background shapes in the home section
 const createFloatingShapes = () => {
   const shapes = document.createElement("div");
   shapes.className = "shapes";
@@ -261,6 +264,8 @@ const createFloatingShapes = () => {
     "heap",
     "tree",
   ];
+
+  // loop 90 times to create 90 floating shapes
   for (let i = 0; i < 90; i++) {
     const shape = document.createElement("div");
     shape.className = "shape";
@@ -401,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Function to initialize a slider
+  // Function to a slider buttons
   const initializeSlider = (sliderSection) => {
     const slider = sliderSection.querySelector(".slider");
     const slides = sliderSection.querySelectorAll(".slide");
